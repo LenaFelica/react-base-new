@@ -2,7 +2,6 @@ import { Container } from '@/components/container';
 
 import { Logo } from '../logo/logo';
 import { PhoneCallButton } from '../phone-call-button/phone-call-button';
-
 import { Navbar } from './components/navbar';
 
 import styles from './header.module.scss';
