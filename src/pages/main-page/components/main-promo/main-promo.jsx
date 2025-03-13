@@ -1,7 +1,6 @@
-import { Container } from '@/components/container';
-import { Button } from '@/components/button';
-
 import promoGirlImg from '@/assets/images/student.png';
+import { Button } from '@/components/button';
+import { Container } from '@/components/container';
 
 import styles from './main-promo.module.scss';
 
