@@ -13,23 +13,23 @@
 }
 
 .primary {
-  background-color: $bg-color-accent;  
-  color: $text-color-secondary;  
+  background-color: $bg-color-accent;
+  color: $text-color-secondary;
 
   &:hover {
-    background-color: $button-color-primary-hover;  
+    background-color: $button-color-primary-hover;
   }
 }
 
 .secondary {
-  background-color: $bg-color-primary;  
+  background-color: $bg-color-primary;
   color: $text-color-secondary;
   line-height: 26px;
   padding: 19px 20px;
 
   &:hover {
-    background-color: $button-color-secondary-hover;  
-    color: $text-color-tertiary; 
+    background-color: $button-color-secondary-hover;
+    color: $text-color-tertiary;
   }
 }
 
@@ -43,5 +43,4 @@
   &:hover {
     color: $text-color-accent-hover;
   }
- }
-
+}
