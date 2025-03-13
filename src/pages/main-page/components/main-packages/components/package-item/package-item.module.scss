@@ -20,6 +20,11 @@
     color: $text-color-secondary;
     transform: scale(1.1);
 
+    &::before,
+    &::after {
+      background-color: $bg-color-primary;
+    }
+
     .packageTitle {
       &::before,
       &::after {
@@ -73,6 +78,10 @@
     font-size: 18px;
     margin-top: 20px;
   }
+
+  .btn {
+    margin-top: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -95,7 +104,7 @@
       font-size: 16px;
     }
 
-    .button {
+    .btn {
       font-size: 16px;
       margin-top: 25px;
     }
