@@ -1,6 +1,6 @@
 import styles from './button.module.scss';
 
-export const Button = ({ children, variant, additionalClassname, rest }) => {
+export const Button = ({ children, variant = 'primary', additionalClassname, rest }) => {
   const createButtonVariant = () => {
     switch (variant) {
       case 'primary':
@@ -8,9 +8,9 @@ export const Button = ({ children, variant, additionalClassname, rest }) => {
       case 'secondary':
         return `${styles.button} ${styles.secondary}`;
       case 'text':
-        return `${styles.button} ${styles.text}`;
+        return styles.text;
       default:
-        return styles.button;
+        return `${styles.button} ${styles.primary}`;
     }
   };
 
