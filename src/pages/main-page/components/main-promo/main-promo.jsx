@@ -15,9 +15,7 @@ export const MainPromo = () => {
               Курсы повышения квалификации по робототехнике для педагогов начальной школы
             </div>
           </div>
-          <Button additionalClassname={styles.btn}>
-            Записаться на курс
-          </Button>
+          <Button additionalClassname={styles.btn}>Записаться на курс</Button>
           <img className={styles.img} src={promoGirlImg} alt="promo" />
         </div>
       </Container>
