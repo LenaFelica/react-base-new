@@ -8,7 +8,7 @@
   padding: 25px 54px;
   cursor: pointer;
   font-size: 18px;
-  line-height: 160%;
+  line-height: inherit;
   border-radius: 5px;
   color: $text-color-secondary;
   transition: background-color 0.3s ease;
@@ -31,9 +31,9 @@
 }
 
 .text {
-  color: $text-color-accent;
+  color: $controls-bg-primary;
 
   &:hover {
-    color: $text-color-accent-hover;
+    color: $controls-bg-primary-hover;
   }
 }
