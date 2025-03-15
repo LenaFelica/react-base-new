@@ -1,0 +1,39 @@
+@use '@/styles/variables.scss' as *;
+
+.button {
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 54px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: inherit;
+  border-radius: 5px;
+  color: $text-color-secondary;
+  transition: background-color 0.3s ease;
+}
+
+.primary {
+  background-color: $controls-bg-primary;
+
+  &:hover {
+    background-color: $controls-bg-primary-hover;
+  }
+}
+
+.secondary {
+  background-color: $controls-bg-tertiary;
+
+  &:hover {
+    background-color: $controls-bg-tertiary-hover;
+  }
+}
+
+.text {
+  color: $controls-bg-primary;
+
+  &:hover {
+    color: $controls-bg-primary-hover;
+  }
+}
