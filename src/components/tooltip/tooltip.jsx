@@ -5,14 +5,14 @@ import { TooltipIcon } from '@/assets/icons';
 import styles from './tooltip.module.scss';
 
 export const Tooltip = ({ text, icon: IconComponent = TooltipIcon }) => {
-  const [isShowTooltip, isSetShowTooltip] = useState(false);
+  const [isShowTooltip, setIsShowTooltip] = useState(false);
 
   const handleMouseEnter = () => {
-    isSetShowTooltip(true);
+    setIsShowTooltip(true);
   };
 
   const handleMouseLeave = () => {
-    isSetShowTooltip(false);
+    setIsShowTooltip(false);
   };
 
   return (
