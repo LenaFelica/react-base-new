@@ -4,28 +4,44 @@
   background-color: $bg-color-secondary;
   padding: 100px 0;
 
-  .wrapper {
-    .title {
-      font-size: 50px;
-      font-weight: 600;
-    }
+  .title {
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  .items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 90px;
+    gap: 40px;
   }
 }
 
 @media (max-width: 1024px) {
-  .profit {
+  .benefits {
     padding: 50px 0;
 
-    .wrapper {
-      .title {
-        text-align: center;
-      }
+    .title {
+      text-align: center;
+    }
+
+    .items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      gap: 30px;
     }
   }
 }
 
 @media (max-width: 768px) {
-  .profit {
+  .benefits {
     padding: 40px 0;
+
+    .title {
+      font-size: 30px;
+    }
   }
 }

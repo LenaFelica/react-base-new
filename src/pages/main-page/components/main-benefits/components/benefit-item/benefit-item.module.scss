@@ -1,0 +1,44 @@
+@use '@/styles/variables.scss' as *;
+
+.item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-basis: 360px;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 18px;
+  margin-top: 20px;
+  color: $text-color-tertiary;
+}
+
+@media (max-width: 1024px) {
+  .item {
+    max-width: 700px;
+    flex-basis: unset;
+  }
+
+  .description {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    max-width: 500px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
