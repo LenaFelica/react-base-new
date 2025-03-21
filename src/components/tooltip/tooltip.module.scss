@@ -29,12 +29,10 @@
     border-radius: 10px;
     color: $text-color-primary;
     box-shadow: 0px 2px 8px 0px $bg-color-quaternary;
-    display: none;
   }
 
   &:hover .text {
     color: $text-color-tertiary;
-    display: block;
   }
 }
 
