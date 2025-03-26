@@ -1,8 +1,11 @@
-import { useForm, Controller } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Input } from '@/components/input';
+
 import { Button } from '@/components/button';
+import { Input } from '@/components/input';
+
 import { schema } from '../helpers/schema';
+
 import styles from './form.module.scss';
 
 export const Form = () => {
@@ -11,25 +14,15 @@ export const Form = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    watch,
   } = useForm({
     resolver: yupResolver(schema),
-    defaultValues: {
-      name: '',
-      phone: '',
-      email: '',
-    },
   });
 
   const onSubmit = (data) => {
-    // eslint-disable-next-line no-console
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Form submitted:', data);
-    }
-    reset({
-      name: '',
-      phone: '',
-      email: '',
-    });
+    console.log('Form submitted:', data);
+
+    reset();
   };
 
   return (
@@ -47,6 +40,7 @@ export const Form = () => {
           <Input
             {...field}
             id="name"
+            value={watch('name') || ''}
             aria-label="Имя"
             placeholder="Имя"
             error={errors.name?.message}
@@ -60,6 +54,7 @@ export const Form = () => {
           <Input
             {...field}
             id="phone"
+            value={watch('phone') || ''}
             aria-label="Телефон"
             type="tel"
             placeholder="Телефон"
@@ -74,6 +69,7 @@ export const Form = () => {
           <Input
             {...field}
             id="email"
+            value={watch('email') || ''}
             aria-label="E-mail"
             type="email"
             placeholder="E-mail"
