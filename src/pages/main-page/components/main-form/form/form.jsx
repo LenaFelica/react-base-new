@@ -21,7 +21,9 @@ export const Form = () => {
   });
 
   const onSubmit = (data) => {
-    console.log('Form submitted: ', data);
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Form submitted:', data);
+    }
     reset({
       name: '',
       phone: '',
