@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import styles from './input.module.scss';
 
@@ -18,3 +18,5 @@ export const Input = forwardRef(
     </>
   ),
 );
+
+Input.displayName = 'Input';

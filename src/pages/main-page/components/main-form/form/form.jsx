@@ -1,11 +1,8 @@
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-
 import { Input } from '@/components/input';
 import { Button } from '@/components/button';
-
 import { schema } from '../helpers/schema';
-
 import styles from './form.module.scss';
 
 export const Form = () => {
