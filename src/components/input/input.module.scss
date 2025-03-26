@@ -1,0 +1,22 @@
+@use '@/styles/variables.scss' as *;
+
+.input {
+  max-width: 500px;
+  font-size: 18px;
+  background-color: $input-bg-color;
+  color: $text-color-tertiary;
+  padding: 18px 19px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+
+.error {
+  border-color: $controls-bg-primary-hover;
+}
+
+@media (max-width: 768px) {
+  .input {
+    width: 100%;
+  }
+}
