@@ -7,11 +7,11 @@
   max-width: 500px;
   flex: 1 1 100%;
   gap: 10px;
-}
 
-.btn {
-  line-height: 26px;
-  padding: 19px 20px;
+  .btn {
+    line-height: 26px;
+    padding: 19px 20px;
+  }
 }
 
 @media (max-width: 768px) {

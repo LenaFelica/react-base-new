@@ -1,4 +1,4 @@
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { Button } from '@/components/button';
@@ -10,18 +10,16 @@ import styles from './form.module.scss';
 
 export const Form = () => {
   const {
-    control,
+    register,
     handleSubmit,
     formState: { errors },
     reset,
-    watch,
   } = useForm({
     resolver: yupResolver(schema),
   });
 
   const onSubmit = (data) => {
     console.log('Form submitted:', data);
-
     reset();
   };
 
@@ -33,49 +31,28 @@ export const Form = () => {
       noValidate
       autoComplete="off"
     >
-      <Controller
-        name="name"
-        control={control}
-        render={({ field }) => (
-          <Input
-            {...field}
-            id="name"
-            value={watch('name') || ''}
-            aria-label="Имя"
-            placeholder="Имя"
-            error={errors.name?.message}
-          />
-        )}
+      <Input
+        register={register('name')}
+        id="name"
+        aria-label="Имя"
+        placeholder="Имя"
+        error={errors.name?.message}
       />
-      <Controller
-        name="phone"
-        control={control}
-        render={({ field }) => (
-          <Input
-            {...field}
-            id="phone"
-            value={watch('phone') || ''}
-            aria-label="Телефон"
-            type="tel"
-            placeholder="Телефон"
-            error={errors.phone?.message}
-          />
-        )}
+      <Input
+        register={register('phone')}
+        id="phone"
+        aria-label="Телефон"
+        type="tel"
+        placeholder="Телефон"
+        error={errors.phone?.message}
       />
-      <Controller
-        name="email"
-        control={control}
-        render={({ field }) => (
-          <Input
-            {...field}
-            id="email"
-            value={watch('email') || ''}
-            aria-label="E-mail"
-            type="email"
-            placeholder="E-mail"
-            error={errors.email?.message}
-          />
-        )}
+      <Input
+        register={register('email')}
+        id="email"
+        aria-label="E-mail"
+        type="email"
+        placeholder="E-mail"
+        error={errors.email?.message}
       />
       <Button additionalClassname={styles.btn} variant="secondary">
         Оформить заявку
