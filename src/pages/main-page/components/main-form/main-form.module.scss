@@ -4,18 +4,21 @@
   background-color: $bg-color-accent;
   background-image: url('./images/percent.png');
   background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-repeat: repeat-x;
   color: $text-color-secondary;
   padding: 87px 0;
 
   .wrapper {
     display: flex;
-    padding: 0 55px;
-    gap: 60px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 60px;
+    gap: 40px;
+    width: 100%;
 
     .text {
       display: flex;
+      flex: 1 0 300px;
       flex-direction: column;
       align-items: flex-start;
       margin-top: 20px;
@@ -34,32 +37,16 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .course {
-    padding: 40px 0;
-
-    .wrapper {
-      padding: 0 30px;
-      gap: 20px;
-
-      .text {
-        margin-top: 0;
-      }
-    }
-  }
-}
-
 @media (max-width: 768px) {
   .course {
     .wrapper {
       flex-direction: column;
       align-items: center;
       gap: 10px;
-      padding: 0 10px;
 
       .text {
         align-items: center;
-        margin-top: 20px;
+        flex: 0 0 auto;
 
         .title {
           font-size: 30px;

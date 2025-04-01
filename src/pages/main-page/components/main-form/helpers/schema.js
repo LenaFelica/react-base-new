@@ -5,7 +5,7 @@ export const schema = yup.object().shape({
     .string()
     .required('Имя обязательно')
     .min(2, 'Минимум 2 символа')
-    .matches(/^[а-яА-ЯёЁ]+$/, 'Только русские буквы'),
+    .matches(/^[а-яА-ЯёЁ\s]+$/, 'Только русские буквы'),
   phone: yup
     .string()
     .required('Телефон обязателен')
