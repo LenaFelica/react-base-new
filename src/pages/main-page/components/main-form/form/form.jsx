@@ -16,6 +16,7 @@ export const Form = () => {
     reset,
   } = useForm({
     resolver: yupResolver(schema),
+    mode: 'onChange',
   });
 
   const onSubmit = (data) => {
