@@ -1,0 +1,14 @@
+@use '@/styles/variables.scss' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 1 500px;
+  gap: 10px;
+
+  .btn {
+    line-height: 26px;
+    padding: 19px 20px;
+  }
+}

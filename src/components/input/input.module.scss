@@ -1,0 +1,33 @@
+@use '@/styles/variables.scss' as *;
+
+.wrapper {
+  position: relative;
+
+  .input {
+    width: 100%;
+    font-size: 18px;
+    background-color: $controls-bg-quaternary;
+    color: $text-color-tertiary;
+    padding: 19px 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .error {
+    border: 1px solid $accent-color;
+  }
+
+  .message {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    font-size: 12px;
+    color: $accent-color;
+  }
+}
+
+@media (max-width: 768px) {
+  .input {
+    width: 100%;
+  }
+}
