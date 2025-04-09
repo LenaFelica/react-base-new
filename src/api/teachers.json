@@ -2,16 +2,16 @@
   {
     "id": 1,
     "name": "Ирина Лайм",
-    "imageName": "irina",
-    "desc": "преподаватель по робототехнике",
+    "imageSrc": "irina",
+    "description": "преподаватель по робототехнике",
     "links": [
       {
         "href": "www.facebook.com",
-        "imagePath": "src/assets/icons/facebook-icon.svg"
+        "imagePath": "assets/icons/facebook-icon.svg"
       },
       {
         "href": "https://www.instagram.com",
-        "imagePath": "src/assets/icons/insta-icon.svg"
+        "imagePath": "assets/icons/insta-icon.svg"
       }
     ],
     "tabs": [
@@ -67,16 +67,16 @@
   {
     "id": 2,
     "name": "Марина Орлова",
-    "imageName": "marina",
-    "desc": "преподаватель по робототехнике",
+    "imageSrc": "marina",
+    "description": "преподаватель по робототехнике",
     "links": [
       {
         "href": "www.facebook.com",
-        "imagePath": "src/assets/icons/facebook-icon.svg"
+        "imagePath": "assets/icons/facebook-icon.svg"
       },
       {
         "href": "https://www.instagram.com",
-        "imagePath": "src/assets/icons/insta-icon.svg"
+        "imagePath": "assets/icons/insta-icon.svg"
       }
     ],
     "tabs": [
@@ -132,16 +132,16 @@
   {
     "id": 3,
     "name": "Максим Петров",
-    "imageName": "maxim",
-    "desc": "преподаватель по программированию",
+    "imageSrc": "maxim",
+    "description": "преподаватель по программированию",
     "links": [
       {
         "href": "www.facebook.com",
-        "imagePath": "src/assets/icons/facebook-icon.svg"
+        "imagePath": "assets/icons/facebook-icon.svg"
       },
       {
         "href": "https://www.instagram.com",
-        "imagePath": "src/assets/icons/insta-icon.svg"
+        "imagePath": "assets/icons/insta-icon.svg"
       }
     ],
     "tabs": [
@@ -197,16 +197,16 @@
   {
     "id": 4,
     "name": "Константин Назаров",
-    "imageName": "konstantin",
-    "desc": "преподаватель по робототехнике",
+    "imageSrc": "konstantin",
+    "description": "преподаватель по робототехнике",
     "links": [
       {
         "href": "www.facebook.com",
-        "imagePath": "src/assets/icons/facebook-icon.svg"
+        "imagePath": "assets/icons/facebook-icon.svg"
       },
       {
         "href": "https://www.instagram.com",
-        "imagePath": "src/assets/icons/insta-icon.svg"
+        "imagePath": "assets/icons/insta-icon.svg"
       }
     ],
     "tabs": [
@@ -262,16 +262,16 @@
   {
     "id": 5,
     "name": "Лиза Весенняя",
-    "imageName": "lisa",
-    "desc": "преподаватель по программированию",
+    "imageSrc": "lisa",
+    "description": "преподаватель по программированию",
     "links": [
       {
         "href": "www.facebook.com",
-        "imagePath": "src/assets/icons/facebook-icon.svg"
+        "imagePath": "assets/icons/facebook-icon.svg"
       },
       {
         "href": "https://www.instagram.com",
-        "imagePath": "src/assets/icons/insta-icon.svg"
+        "imagePath": "assets/icons/insta-icon.svg"
       }
     ],
     "tabs": [

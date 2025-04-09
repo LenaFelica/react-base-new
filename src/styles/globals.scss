@@ -22,3 +22,8 @@ body {
 section {
   padding: 120px 0;
 }
+
+.swiper-scrollbar-drag {
+  background: $controls-bg-tertiary;
+  cursor: grab;
+}
