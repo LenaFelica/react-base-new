@@ -1,3 +1,5 @@
+import 'swiper/css';
+
 import { Layout } from '@/components/layout';
 import { MainPage } from '@/pages/main-page';
 

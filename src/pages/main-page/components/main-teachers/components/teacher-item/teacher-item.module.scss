@@ -8,6 +8,7 @@
   }
 
   .description {
+    flex-grow: 1;
     font-size: 18px;
     margin-top: 10px;
     color: $text-color-tertiary;
@@ -16,8 +17,6 @@
   .btn {
     font-size: 18px;
     margin-top: 20px;
-    color: $text-color-accent;
-    background: none;
   }
 }
 

@@ -1,8 +1,6 @@
-import { useEffect, useRef } from 'react';
-import { Navigation, Scrollbar } from 'swiper/modules';
+import { useEffect, useRef, useState } from 'react';
+import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
 import teachers from '@/api/teachers.json';
@@ -19,35 +17,31 @@ export const MainTeachers = () => {
 
   const swiperRef = useRef(null);
   const scrollbarRef = useRef(null);
+  const [scrollbarReady, setScrollbarReady] = useState(false);
 
   useEffect(() => {
-    if (swiperRef.current && scrollbarRef.current) {
+    if (scrollbarRef.current) {
+      setScrollbarReady(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (swiperRef.current && scrollbarRef.current && scrollbarReady) {
       swiperRef.current.update();
     }
-  }, [swiperRef, scrollbarRef]);
+  }, [scrollbarReady]);
 
-  const handleSwiperInit = (swiper) => {
-    swiperRef.current = swiper;
-
-    if (swiperRef.current) {
-      swiper.params.scrollbar.el = scrollbarRef.current;
-      swiper.scrollbar.init();
-      swiper.scrollbar.updateSize();
-    }
+  const initSwiper = (swiper) => {
+    return (swiperRef.current = swiper);
   };
 
-  const handleSlideChange = (slideDirection) => {
-    return function () {
-      if (!swiperRef.current) {
-        return;
-      }
-      if (slideDirection === 'prev') {
-        swiperRef.current.slidePrev();
-      }
-      if (slideDirection === 'next') {
-        swiperRef.current.slideNext();
-      }
-    };
+  const handleSlideChange = (slideDirection) => () => {
+    if (slideDirection === 'prev') {
+      swiperRef.current?.slidePrev();
+    }
+    if (slideDirection === 'next') {
+      swiperRef.current?.slideNext();
+    }
   };
 
   return (
@@ -56,19 +50,14 @@ export const MainTeachers = () => {
         <h2 className={styles.title}>Профессиональные тренеры</h2>
         <Swiper
           className={styles.list}
-          modules={[Navigation, Scrollbar]}
-          spaceBetween={30}
+          modules={[Scrollbar]}
+          spaceBetween={isMobile ? 30 : 40}
           slidesPerView={isMobile ? 'auto' : 3}
-          navigation={{
-            nextEl: '.next',
-            prevEl: '.prev',
-          }}
           scrollbar={{
-            el: scrollbarRef.current,
+            el: scrollbarReady ? scrollbarRef.current : null,
             draggable: true,
-            hide: false,
           }}
-          onBeforeInit={handleSwiperInit}
+          onBeforeInit={initSwiper}
         >
           {teachers.map((teacher) => (
             <SwiperSlide key={teacher.id} className={styles.swiperSlide}>
@@ -76,6 +65,7 @@ export const MainTeachers = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+
         <Controls
           scrollbarRef={scrollbarRef}
           onPrev={handleSlideChange('prev')}
