@@ -8,10 +8,10 @@ export const Controls = ({ scrollbarRef, onPrev, onNext }) => {
     <div className={styles.controls}>
       <div className={`${styles.scrollbar} scrollbar`} ref={scrollbarRef} />
       <div className={styles.swiperButtons}>
-        <div className={`${styles.swiperBtn} prev`} onClick={onPrev}>
+        <div className={styles.swiperBtn} onClick={onPrev}>
           <ArrowLeftIcon />
         </div>
-        <div className={`${styles.swiperBtn} next`} onClick={onNext}>
+        <div className={styles.swiperBtn} onClick={onNext}>
           <ArrowRightIcon />
         </div>
       </div>

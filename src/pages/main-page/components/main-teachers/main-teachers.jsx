@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css/scrollbar';
 
 import teachers from '@/api/teachers.json';
 import { Container } from '@/components/container';
@@ -17,22 +16,15 @@ export const MainTeachers = () => {
 
   const swiperRef = useRef(null);
   const scrollbarRef = useRef(null);
-  const [scrollbarReady, setScrollbarReady] = useState(false);
 
   useEffect(() => {
-    if (scrollbarRef.current) {
-      setScrollbarReady(true);
+    if (swiperRef.current && scrollbarRef.current) {
+      swiperRef.current.update();
     }
   }, []);
 
-  useEffect(() => {
-    if (swiperRef.current && scrollbarRef.current && scrollbarReady) {
-      swiperRef.current.update();
-    }
-  }, [scrollbarReady]);
-
   const initSwiper = (swiper) => {
-    return (swiperRef.current = swiper);
+    swiperRef.current = swiper;
   };
 
   const handleSlideChange = (slideDirection) => () => {
@@ -48,13 +40,14 @@ export const MainTeachers = () => {
     <section className={styles.teachers}>
       <Container>
         <h2 className={styles.title}>Профессиональные тренеры</h2>
+
         <Swiper
           className={styles.list}
           modules={[Scrollbar]}
-          spaceBetween={isMobile ? 30 : 40}
+          spaceBetween={isMobile ? 20 : 40}
           slidesPerView={isMobile ? 'auto' : 3}
           scrollbar={{
-            el: scrollbarReady ? scrollbarRef.current : null,
+            el: '.scrollbar',
             draggable: true,
           }}
           onBeforeInit={initSwiper}
