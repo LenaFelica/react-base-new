@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -19,13 +19,20 @@ export const MainTeachers = () => {
 
   const initSwiper = (swiper) => {
     swiperRef.current = swiper;
+  };
 
-    if (scrollbarRef.current) {
+  useEffect(() => {
+    if (swiperRef.current && scrollbarRef.current) {
+      const swiper = swiperRef.current;
       swiper.params.scrollbar.el = scrollbarRef.current;
-      swiper.scrollbar.init();
+
+      if (!swiper.scrollbar.el) {
+        swiper.scrollbar.init();
+      }
+
       swiper.scrollbar.updateSize();
     }
-  };
+  }, [scrollbarRef.current]);
 
   const createSlideChangeHandler = (slideDirection) => () => {
     if (slideDirection === 'prev') {
@@ -47,7 +54,7 @@ export const MainTeachers = () => {
           spaceBetween={isMobile ? 20 : 40}
           slidesPerView={isMobile ? 'auto' : 3}
           scrollbar={{
-            el: null,
+            el: scrollbarRef.current,
             draggable: true,
           }}
           onBeforeInit={initSwiper}
