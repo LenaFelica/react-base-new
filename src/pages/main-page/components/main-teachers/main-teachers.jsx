@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -17,17 +17,17 @@ export const MainTeachers = () => {
   const swiperRef = useRef(null);
   const scrollbarRef = useRef(null);
 
-  useEffect(() => {
-    if (swiperRef.current && scrollbarRef.current) {
-      swiperRef.current.update();
-    }
-  }, []);
-
   const initSwiper = (swiper) => {
     swiperRef.current = swiper;
+
+    if (scrollbarRef.current) {
+      swiper.params.scrollbar.el = scrollbarRef.current;
+      swiper.scrollbar.init();
+      swiper.scrollbar.updateSize();
+    }
   };
 
-  const handleSlideChange = (slideDirection) => () => {
+  const createSlideChangeHandler = (slideDirection) => () => {
     if (slideDirection === 'prev') {
       swiperRef.current?.slidePrev();
     }
@@ -47,7 +47,7 @@ export const MainTeachers = () => {
           spaceBetween={isMobile ? 20 : 40}
           slidesPerView={isMobile ? 'auto' : 3}
           scrollbar={{
-            el: '.scrollbar',
+            el: null,
             draggable: true,
           }}
           onBeforeInit={initSwiper}
@@ -61,8 +61,8 @@ export const MainTeachers = () => {
 
         <Controls
           scrollbarRef={scrollbarRef}
-          onPrev={handleSlideChange('prev')}
-          onNext={handleSlideChange('next')}
+          onPrev={createSlideChangeHandler('prev')}
+          onNext={createSlideChangeHandler('next')}
         />
       </Container>
     </section>
