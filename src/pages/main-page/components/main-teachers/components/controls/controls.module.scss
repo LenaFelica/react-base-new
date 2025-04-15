@@ -1,0 +1,56 @@
+@use '@/styles/variables.scss' as *;
+
+.controls {
+  margin-top: 77px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .scrollbar {
+    position: relative;
+    width: 360px;
+    height: 5px;
+    border-radius: 40px;
+    background: $controls-bg-color;
+
+    .swiper-scrollbar-drag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 260px;
+      height: 5px;
+      border-radius: 40px;
+    }
+
+    :global(.swiper-scrollbar-drag) {
+      background: $controls-bg-tertiary;
+      cursor: grab;
+    }
+  }
+
+  .swiperButtons {
+    margin-right: 10px;
+    display: flex;
+
+    .swiperBtn {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .controls {
+    margin: 30px 0;
+
+    .scrollbar {
+      width: 100%;
+    }
+
+    .swiperButtons {
+      display: none;
+    }
+  }
+}
