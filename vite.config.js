@@ -16,6 +16,7 @@ export default defineConfig({
     extensions: ['.jsx', '.js', '.json'],
   },
   build: {
-    assetsInclude: ['**/*.woff', '**/*.woff2'],
+    assetsInclude: ['**/*.woff', '**/*.woff2', '**/*.svg'],
   },
+  assetsInclude: ['**/*.svg'],
 });
