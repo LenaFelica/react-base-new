@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { ArrowDown } from '@/assets/icons';
 import { useOutsideClick } from '@/hooks/useOutsideClick';
 
-import styles from './Select.module.scss';
+import styles from './select.module.scss';
 
 export const Select = ({ options, value, onChange }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
