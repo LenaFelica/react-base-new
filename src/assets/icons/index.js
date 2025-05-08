@@ -5,4 +5,4 @@ import { CloseIcon } from './CloseIcon';
 import { PhoneIcon } from './PhoneIcon';
 import { TooltipIcon } from './TooltipIcon';
 
-export { ArrowDown,BurgerIcon, CloseBlack, CloseIcon, PhoneIcon, TooltipIcon };
+export { ArrowDown, BurgerIcon, CloseBlack, CloseIcon, PhoneIcon, TooltipIcon };
