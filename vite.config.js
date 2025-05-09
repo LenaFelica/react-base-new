@@ -19,5 +19,4 @@ export default defineConfig({
     assetsInclude: ['**/*.woff', '**/*.woff2', '**/*.svg'],
   },
   assetsInclude: ['**/*.svg'],
-  publicDir: 'public',
 });
