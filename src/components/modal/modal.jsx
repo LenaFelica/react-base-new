@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
-
 import { createPortal } from 'react-dom';
-import { useScrollLock } from '@/hooks/useScrollLock';
 
 import { CloseBlack } from '@/assets/icons/CloseBlack';
+import { useScrollLock } from '@/hooks/useScrollLock';
 import { useWindowSize } from '@/hooks/useWindowSize';
 
 import styles from './modal.module.scss';
