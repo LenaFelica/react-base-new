@@ -1,19 +1,25 @@
 import { useEffect } from 'react';
+
 import { createPortal } from 'react-dom';
+import { useScrollLock } from '@/hooks/useScrollLock';
 
 import { CloseBlack } from '@/assets/icons/CloseBlack';
 import { useWindowSize } from '@/hooks/useWindowSize';
-import { lockScroll, unLockScroll } from '@/utils/scrollLock';
 
 import styles from './modal.module.scss';
 
 export const Modal = ({ children, isOpen, onClose }) => {
   const { isMobile } = useWindowSize();
+  const { lockScroll, unlockScroll } = useScrollLock();
 
   useEffect(() => {
     if (isOpen) {
       lockScroll();
+      return;
     }
+    unlockScroll();
+
+    return () => unlockScroll();
   }, [isOpen]);
 
   if (!isOpen) {
@@ -21,7 +27,6 @@ export const Modal = ({ children, isOpen, onClose }) => {
   }
 
   const handleModalClose = () => {
-    unLockScroll();
     onClose();
   };
 

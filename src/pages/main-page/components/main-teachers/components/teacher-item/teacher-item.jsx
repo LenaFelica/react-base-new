@@ -10,14 +10,13 @@ import styles from './teacher-item.module.scss';
 
 export const TeacherItem = ({ teacher }) => {
   const { name, description, imageSrc } = teacher;
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
 
   const handleModalOpen = () => {
-    console.log('Открытие модалки');
-    setIsModalOpen(true);
+    setIsTeacherModalOpen(true);
   };
   const handleModalClose = () => {
-    setIsModalOpen(false);
+    setIsTeacherModalOpen(false);
   };
 
   return (
@@ -30,7 +29,7 @@ export const TeacherItem = ({ teacher }) => {
           Подробнее
         </Button>
       </div>
-      <Modal isOpen={isModalOpen} onClose={handleModalClose}>
+      <Modal isOpen={isTeacherModalOpen} onClose={handleModalClose}>
         <TeacherModalContent teacher={teacher} />
       </Modal>
     </div>

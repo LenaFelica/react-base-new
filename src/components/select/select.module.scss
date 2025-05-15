@@ -12,7 +12,7 @@
     align-items: center;
     width: 100%;
     cursor: pointer;
-    border: 1px solid #fff;
+    border: 1px solid $controls-bg-secondary;
     padding: 10px;
     background-color: $accent-color;
     color: $text-color-secondary;
@@ -20,7 +20,7 @@
     gap: 10px;
 
     &:hover {
-      background-color: color.adjust($accent-color, $lightness: 10%);
+      background-color: $bg-color-accent-opacity;
     }
   }
 
@@ -31,7 +31,6 @@
     top: 100%;
     left: 0;
     width: 100%;
-    z-index: 1;
 
     .selectOption {
       display: flex;
@@ -41,7 +40,7 @@
       padding: 10px;
       background-color: $accent-color;
       color: $text-color-secondary;
-      border: 1px solid #fff;
+      border: 1px solid $controls-bg-secondary;
       border-bottom: 0;
 
       &.active {

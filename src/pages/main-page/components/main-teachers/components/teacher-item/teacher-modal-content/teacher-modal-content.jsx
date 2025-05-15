@@ -13,17 +13,26 @@ import styles from './teacher-modal-content.module.scss';
 export const TeacherModalContent = ({
   teacher: { id, name, description, imageSrc, tabs, links },
 }) => {
-  const selectOptions = createTabOptions(tabs);
-
-  const [activeTab, setActiveTab] = useState(selectOptions[0] || null);
+  const [options, setOptions] = useState([]);
+  const [activeTab, setActiveTab] = useState({});
   const [activeTabContent, setActiveTabContent] = useState(tabs[0]?.data || []);
 
   const { isMobile } = useWindowSize();
 
   useEffect(() => {
-    if (!activeTab) {
-      return;
+    const newOptions = createTabOptions(tabs);
+    setOptions(newOptions);
+  }, [tabs]);
+
+  useEffect(() => {
+    if (options.length > 0) {
+      setActiveTab(options[0]);
     }
+  }, [options]);
+
+  useEffect(() => {
+    if (!activeTab?.value) return;
+
     const newTabContent = tabs.find((tab) => tab.name === activeTab.value);
     if (newTabContent) {
       setActiveTabContent(newTabContent.data);
@@ -51,13 +60,9 @@ export const TeacherModalContent = ({
 
       <div className={styles.contentBottom}>
         {isMobile ? (
-          <Select options={selectOptions} value={activeTab} onChange={handleTabChange} />
+          <Select options={options} value={activeTab} onChange={handleTabChange} />
         ) : (
-          <TabButtons
-            options={selectOptions}
-            activeTab={activeTab}
-            handleTabChange={handleTabChange}
-          />
+          <TabButtons options={options} activeTab={activeTab} handleTabChange={handleTabChange} />
         )}
 
         <div className={styles.contentBottomTabsContent}>
