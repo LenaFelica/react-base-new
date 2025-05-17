@@ -18,7 +18,7 @@ export const Select = ({ options, value, onChange }) => {
     setIsDropdownOpen(false);
   };
 
-  const handleOptionClick = () => {
+  const handleSelectButtonClick = () => {
     if (!isDropdownOpen) {
       handleDropdownOpen();
       return;
@@ -39,7 +39,7 @@ export const Select = ({ options, value, onChange }) => {
 
   return (
     <div className={styles.select} ref={dropdownRef}>
-      <button type="button" className={styles.selectButton} onClick={handleOptionClick}>
+      <button type="button" className={styles.selectButton} onClick={handleSelectButtonClick}>
         <span>{value.label}</span>
         <ArrowDown />
       </button>
