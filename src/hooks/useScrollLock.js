@@ -8,6 +8,7 @@ export const useScrollLock = () => {
       return;
     }
 
+    document.body.classList.add('lock');
     isLocked.current = true;
   };
 
@@ -16,6 +17,7 @@ export const useScrollLock = () => {
       return;
     }
 
+    document.body.classList.remove('lock');
     isLocked.current = false;
   };
 
