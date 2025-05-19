@@ -1,6 +1,7 @@
-import { Link } from '@/components/link';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
-import styles from './navbar.module.scss';
+import { DesktopNavbar } from './devices/desktop';
+import { MobileNavbar } from './devices/mobile';
 
 const navbarItems = [
   {
@@ -20,16 +21,16 @@ const navbarItems = [
   },
 ];
 
-export const Navbar = () => {
+export const Navbar = ({ isOpen, onClose }) => {
+  const { isTablet } = useWindowSize();
+
   return (
-    <nav>
-      <ul className={styles.navbar}>
-        {navbarItems.map((link) => (
-          <li key={link.id}>
-            <Link href={link.href}>{link.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <>
+      {isTablet ? (
+        <MobileNavbar navbarItems={navbarItems} isOpen={isOpen} onClose={onClose} />
+      ) : (
+        <DesktopNavbar navbarItems={navbarItems} />
+      )}
+    </>
   );
 };
