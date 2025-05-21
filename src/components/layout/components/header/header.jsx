@@ -15,7 +15,7 @@ import styles from './header.module.scss';
 export const Header = () => {
   const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
   const { lockScroll, unlockScroll } = useScrollLock();
-  const { isTablet, width } = useWindowSize();
+  const { isTablet } = useWindowSize();
 
   useEffect(() => {
     if (!isMobileNavbarOpen) {
