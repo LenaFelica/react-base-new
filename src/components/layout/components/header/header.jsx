@@ -26,8 +26,6 @@ export const Header = () => {
     lockScroll();
   }, [isMobileNavbarOpen]);
 
-  if (width === 0) return null;
-
   const handleMobileNavbarOpen = () => {
     setIsMobileNavbarOpen(true);
   };
